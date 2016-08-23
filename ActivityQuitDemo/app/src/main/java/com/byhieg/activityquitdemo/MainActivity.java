@@ -30,7 +30,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
                 break;
 
             case R.id.button5:
-                AtyContainer.getInstance().finishAllActivity();
+//                ActivityContainer.getInstance().finishAllActivity();
+                Intent intent1 = new Intent();
+                intent1.setAction(EXITACTION);
+                sendBroadcast(intent1);
+                break;
         }
     }
 

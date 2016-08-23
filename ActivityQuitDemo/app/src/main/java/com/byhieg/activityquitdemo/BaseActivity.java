@@ -1,17 +1,28 @@
 package com.byhieg.activityquitdemo;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BaseActivity extends AppCompatActivity {
 
+    protected static final String EXITACTION = "action.exit";
+
+    private ExitReceiver mExitReceiver = new ExitReceiver();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AtyContainer.getInstance().addActivity(this);
+//        ActivityContainer.getInstance().addActivity(this);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(EXITACTION);
+        registerReceiver(mExitReceiver, intentFilter);
     }
 
 
@@ -19,20 +30,29 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        AtyContainer.getInstance().removeActivity(this);
+//        ActivityContainer.getInstance().removeActivity(this);
+        unregisterReceiver(mExitReceiver);
     }
+
+    class ExitReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            BaseActivity.this.finish();
+        }
+    }
+
 }
 
-class AtyContainer{
-    private AtyContainer(){
+class ActivityContainer {
+    private ActivityContainer(){
 
     }
 
-    private static AtyContainer instance = new AtyContainer();
-    private static List<AppCompatActivity> activityStack = new ArrayList<>();
+    private static ActivityContainer instance = new ActivityContainer();
+    private static List<AppCompatActivity> activityStack = new LinkedList<>();
 
 
-    public static AtyContainer getInstance(){
+    public static ActivityContainer getInstance(){
         return instance;
     }
 
@@ -57,3 +77,5 @@ class AtyContainer{
         activityStack.clear();
     }
 }
+
+
