@@ -1,5 +1,6 @@
 package com.byhieg.activityquitdemo;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,9 +32,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
             case R.id.button5:
 //                ActivityContainer.getInstance().finishAllActivity();
-                Intent intent1 = new Intent();
-                intent1.setAction(EXITACTION);
-                sendBroadcast(intent1);
+//                Intent intent1 = new Intent();
+//                intent1.setAction(EXITACTION);
+//                sendBroadcast(intent1);
+//                break;
+//                android.os.Process.killProcess(android.os.Process.myPid());
+//                System.exit(0);
+                ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                manager.killBackgroundProcesses(getPackageName());
                 break;
         }
     }
