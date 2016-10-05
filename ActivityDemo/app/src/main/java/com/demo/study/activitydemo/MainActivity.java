@@ -1,18 +1,14 @@
 package com.demo.study.activitydemo;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.PersistableBundle;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,60 +53,63 @@ public class MainActivity extends AppCompatActivity {
                 builder.create().show();
             }
         });
-        Log.e("onCreate", "执行了");
+        if (savedInstanceState != null) {
+            Log.e("回复的内容", savedInstanceState.getString("key"));
+        }
+        Log.e("Main1", "onCreate执行了");
     }
 
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.e("onRestore", "执行了");
+        Log.e("Main1", "onRestore执行了");
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
         outState.putString("key","value");
-        Log.e("onSave", "执行了");
+        Log.e("Main1", "onSave执行了");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e("onStart", "执行了");
+        Log.e("Main1", "onStart执行了");
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e("onResume", "执行了");
+        Log.e("Main1", "onResume执行了");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("onPause", "执行了");
+        Log.e("Main1", "onPause执行了");
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e("onStop", "执行了");
+        Log.e("Main1", "onStop执行了");
 
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.e("onRestart", "执行了");
+        Log.e("Main1", "onRestart执行了");
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("onDestory","执行了");
+        Log.d("Main1","onDestroy执行了");
     }
 }

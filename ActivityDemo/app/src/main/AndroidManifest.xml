@@ -16,6 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main2Activity">
+            <!--android:configChanges="screenSize|orientation"-->
+
         </activity>
     </application>
 

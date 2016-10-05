@@ -1,8 +1,8 @@
 package com.demo.study.activitydemo;
 
-import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Log.e("aa", "bb");
+        Log.e("Main2", "onRestore执行了");
     }
 
     @Override
@@ -38,8 +38,38 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("Main2","onStart执行了");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("Main2","onResume执行了");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("Main2","onPause执行了");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("Main2","onStop执行了");
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.e("Main2", "onDestroy执行了");
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.e("Main2", "onChange执行了");
     }
 }
