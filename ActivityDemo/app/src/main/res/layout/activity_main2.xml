@@ -16,4 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="finish"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_below="@id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动Activity"/>
 </RelativeLayout>
