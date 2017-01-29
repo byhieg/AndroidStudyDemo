@@ -2,4 +2,11 @@
     <string name="app_name">RxDemo</string>
     <string name="normal_rx">正常的Rx流程</string>
     <string name="content_normal">床前明月光\n疑是地上霜\n举头望明月\n低头思故乡\n</string>
+    <string name="filter_rx">操作符Filter</string>
+    <string name="content_filter">输出1-100中能被3整除的数</string>
+    <string name="map_rx">操作符——MAP</string>
+    <string name="content_map">判断一组随机的数组中小于5的数</string>
+    <string name="schulder_rx">线程调度</string>
+    <string name="content_schulder">从资源文件中加载图片</string>
+
 </resources>

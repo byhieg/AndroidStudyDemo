@@ -40,11 +40,14 @@ public class NormalRxActivity extends AppCompatActivity {
     public void startRx() {
         Log.d("aaa","开始启动");
         result.append("开始执行Rx\n");
-        createObservable().subscribe(createSubscriber());
+//        createObservable().subscribe(createSubscriber());
+        startSimpleRx();
     }
 
     public Observable createObservable(){
-        Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
+
+
+        return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 subscriber.onNext("床前明月光");
@@ -54,12 +57,10 @@ public class NormalRxActivity extends AppCompatActivity {
                 subscriber.onCompleted();
             }
         });
-
-        return observable;
     }
 
-    public Subscriber createSubscriber(){
-        Subscriber subscriber = new Subscriber<String>() {
+    public Subscriber<String> createSubscriber(){
+        return new Subscriber<String>() {
             @Override
             public void onCompleted() {
                 result.append("执行观察者中的onCompleted()...\n");
@@ -77,7 +78,28 @@ public class NormalRxActivity extends AppCompatActivity {
                 result.append(s + "...\n");
             }
         };
-        return subscriber;
+    }
+
+    public void startSimpleRx(){
+        Observable.just("床前明月光", "疑是地上霜", "举头望明月", "低头思故乡").
+                subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        result.append("执行观察者中的onCompleted()...\n");
+                        result.append("订阅完毕，结果观察...\n");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        result.append("执行onNext()方法...\n");
+                        result.append(s + "...\n");
+                    }
+                });
     }
 
 }

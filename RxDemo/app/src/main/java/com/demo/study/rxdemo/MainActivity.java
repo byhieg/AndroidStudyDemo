@@ -17,8 +17,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.normal_rx)
-    public void submit(){
+    public void submitNormalActivity(){
         Intent intent = new Intent(this,NormalRxActivity.class);
         startActivity(intent);
     }
+
+    @OnClick(R.id.filter_rx)
+    public void submitFilterActivity(){
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.map_rx)
+    public void submitMapActivity(){
+        Intent intent = new Intent(this,MapActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.schulder_rx)
+    public void submitSchulderActivity(){
+        Intent intent = new Intent(this,SchulderActivity.class);
+        startActivity(intent);
+    }
+
+
 }
