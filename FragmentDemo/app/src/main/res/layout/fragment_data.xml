@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.demo.study.fragmentdemo.DataFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="按钮一"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="按钮二"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/button_3"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="按钮三"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/button_4"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="按钮四"
+        android:layout_marginBottom="40dp"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RetrofitDemo</string>
+    <string name="getHtml">POST请求网页</string>
+</resources>

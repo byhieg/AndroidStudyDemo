@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RxDemo</string>
+    <string name="normal_rx">正常的Rx流程</string>
+    <string name="content_normal">床前明月光\n疑是地上霜\n举头望明月\n低头思故乡\n</string>
+</resources>
