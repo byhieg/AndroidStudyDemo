@@ -12,5 +12,9 @@
     <string name="content_flat_map">打印一个学校所有班级所有学生姓名</string>
     <string name="merge_rx">操作符——合并</string>
     <string name="content_merge">两个任务并发进行，全部处理之后在更新数据</string>
+    <string name="interval_rx">操作符——interval,取消订阅</string>
+    <string name="tosortedlist_rx">操作符——tosortedlist</string>
+    <string name="connect_rx">操作符——connect</string>
+    <string name="timestamp_rx">操作符——添加时间戳</string>
 
 </resources>

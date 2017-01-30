@@ -57,5 +57,29 @@
             android:layout_height="wrap_content"
             android:text="@string/merge_rx"
             />
+        <Button
+            android:id="@+id/interval_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/interval_rx"
+            />
+        <Button
+            android:id="@+id/tosortedlist_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tosortedlist_rx"
+            />
+        <Button
+            android:id="@+id/connect_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connect_rx"
+            />
+        <Button
+            android:id="@+id/add_timestamp_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timestamp_rx"
+            />
     </LinearLayout>
 </RelativeLayout>

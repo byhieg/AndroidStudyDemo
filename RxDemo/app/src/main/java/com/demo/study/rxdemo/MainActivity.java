@@ -46,10 +46,27 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @OnClick(R.id.merge_rx)
-    public void submitMergeActivity(){
-        Intent intent = new Intent(this,MergeActivity.class);
+    @OnClick(R.id.interval_rx)
+    public void submitIntervalActivity(){
+        Intent intent = new Intent(this,TimerActivity.class);
         startActivity(intent);
     }
 
+    @OnClick(R.id.tosortedlist_rx)
+    public void submitSortActivity(){
+        Intent intent = new Intent(this,SortActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.connect_rx)
+    public void submitConnectActivity(){
+        Intent intent = new Intent(this,ConnectActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.add_timestamp_rx)
+    public void submitTimestampActivity(){
+        Intent intent = new Intent(this,TimestampActivity.class);
+        startActivity(intent);
+    }
 }

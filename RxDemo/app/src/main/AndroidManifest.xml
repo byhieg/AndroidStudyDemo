@@ -20,7 +20,11 @@
         <activity android:name=".MapActivity" />
         <activity android:name=".SchulderActivity" />
         <activity android:name=".FlatMapActivity" />
-        <activity android:name=".MergeActivity"></activity>
+        <activity android:name=".MergeActivity" />
+        <activity android:name=".TimerActivity" />
+        <activity android:name=".SortActivity" />
+        <activity android:name=".ConnectActivity" />
+        <activity android:name=".TimestampActivity"></activity>
     </application>
 
 </manifest>
