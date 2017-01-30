@@ -16,5 +16,7 @@
     <string name="tosortedlist_rx">操作符——tosortedlist</string>
     <string name="connect_rx">操作符——connect</string>
     <string name="timestamp_rx">操作符——添加时间戳</string>
+    <string name="content_timer">定时器，每一秒发送打印一个数字 \n\ninterval(1, TimeUnit.SECONDS) 创建一个每隔一秒发送一次事件的对象</string>
+    <string name="content_connect">Observable发送事件1-6，两个观察者同时观察这个Observable 要求：每发出一个事件，观察者A和观察者都会收到，而不是先把所有的时间发送A,然后再发送给B</string>
 
 </resources>
