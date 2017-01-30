@@ -40,5 +40,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.flatMap_rx)
+    public void submitFlatMapActivity(){
+        Intent intent = new Intent(this, FlatMapActivity.class);
+        startActivity(intent);
+    }
 
 }

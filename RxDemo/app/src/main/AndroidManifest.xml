@@ -18,7 +18,8 @@
         <activity android:name=".NormalRxActivity" />
         <activity android:name=".FilterActivity" />
         <activity android:name=".MapActivity" />
-        <activity android:name=".SchulderActivity"></activity>
+        <activity android:name=".SchulderActivity" />
+        <activity android:name=".FlatMapActivity"></activity>
     </application>
 
 </manifest>

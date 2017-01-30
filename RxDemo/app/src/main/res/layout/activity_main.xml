@@ -43,5 +43,12 @@
             android:layout_height="wrap_content"
             android:text="@string/schulder_rx"
             />
+
+        <Button
+            android:id="@+id/flatMap_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/flatMap_rx"
+            />
     </LinearLayout>
 </RelativeLayout>
