@@ -43,7 +43,6 @@ public class FlatMapActivity extends AppCompatActivity {
             schoolClass.setStudents(students);
             schoolClasses[i] = schoolClass;
         }
-        System.out.println("aaa");
     }
 
 

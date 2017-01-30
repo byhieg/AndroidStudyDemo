@@ -10,5 +10,7 @@
     <string name="content_schulder">从资源文件中加载图片</string>
     <string name="flatMap_rx">操作符——FlatMap</string>
     <string name="content_flat_map">打印一个学校所有班级所有学生姓名</string>
+    <string name="merge_rx">操作符——合并</string>
+    <string name="content_merge">两个任务并发进行，全部处理之后在更新数据</string>
 
 </resources>

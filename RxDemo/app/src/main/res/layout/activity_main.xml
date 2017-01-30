@@ -50,5 +50,12 @@
             android:layout_height="wrap_content"
             android:text="@string/flatMap_rx"
             />
+
+        <Button
+            android:id="@+id/merge_rx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merge_rx"
+            />
     </LinearLayout>
 </RelativeLayout>

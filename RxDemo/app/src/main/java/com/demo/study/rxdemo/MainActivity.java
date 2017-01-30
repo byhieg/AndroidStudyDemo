@@ -46,4 +46,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.merge_rx)
+    public void submitMergeActivity(){
+        Intent intent = new Intent(this,MergeActivity.class);
+        startActivity(intent);
+    }
+
 }

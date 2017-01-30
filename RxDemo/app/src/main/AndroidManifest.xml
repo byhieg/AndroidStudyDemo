@@ -19,7 +19,8 @@
         <activity android:name=".FilterActivity" />
         <activity android:name=".MapActivity" />
         <activity android:name=".SchulderActivity" />
-        <activity android:name=".FlatMapActivity"></activity>
+        <activity android:name=".FlatMapActivity" />
+        <activity android:name=".MergeActivity"></activity>
     </application>
 
 </manifest>
