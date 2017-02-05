@@ -38,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         EventBus.getDefault().register(this);
     }
 
+    @OnClick(R.id.button1)
+    public void startThirdActivity(){
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onDestroy() {
