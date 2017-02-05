@@ -2,35 +2,33 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:id="@+id/activity_second"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@android:color/white"
-    tools:context="com.demo.study.eventbusdemo.MainActivity">
+    tools:context="com.demo.study.eventbusdemo.SecondActivity">
 
-    <TextView
+
+    <EditText
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_centerInParent="true"
+        android:text="输入想传递给MainActivity的消息"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="20sp"
-        android:textColor="@android:color/holo_red_dark"/>
+        android:layout_centerInParent="true"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/text"
+    <TextView
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转到第二个Activity"
-        android:layout_centerInParent="true"
+        android:text="发送"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/text"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        android:background="@android:color/white"
-        android:textColor="@android:color/holo_blue_bright"/>
-
+        android:layout_centerInParent="true"/>
 </RelativeLayout>
