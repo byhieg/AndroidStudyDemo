@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.demo.study.eventbusdemo.event.ObjectEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -33,10 +36,14 @@ public class ThirdFragment extends Fragment {
 
     private void initView(View view){
         Button button = (Button) view.findViewById(R.id.button);
+        final TextView text = (TextView) view.findViewById(R.id.text);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),MainActivity.class));
+                ObjectEvent oe = new ObjectEvent();
+                oe.setMessage(text.getText().toString());
+                EventBus.getDefault().post(oe);
             }
         });
     }

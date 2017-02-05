@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v4.app.INotificationSideChannel;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.demo.study.eventbusdemo.event.MessageEvent;
+import com.demo.study.eventbusdemo.event.ObjectEvent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -27,15 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        textView.setText("MainActivity");
+        EventBus.getDefault().register(this);
     }
 
     @OnClick(R.id.button)
     public void startSecondActivity(){
         Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
-        EventBus.getDefault().register(this);
     }
 
     @OnClick(R.id.button1)
@@ -51,7 +52,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(MessageEvent messageEvent){
+    public void onMessageEvent(MessageEvent messageEvent){
         textView.setText(messageEvent.getMessage());
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onObjectEvent(ObjectEvent objectEvent){
+        textView.setText(objectEvent.getMessage());
+        Toast.makeText(this,objectEvent.getMessage(),Toast.LENGTH_SHORT).show();
+    }
+
 }
