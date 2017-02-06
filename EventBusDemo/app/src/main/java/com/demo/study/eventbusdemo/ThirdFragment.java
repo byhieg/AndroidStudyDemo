@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.demo.study.eventbusdemo.event.BackGroundEvent;
 import com.demo.study.eventbusdemo.event.ObjectEvent;
 
 import org.greenrobot.eventbus.EventBus;
@@ -45,6 +46,11 @@ public class ThirdFragment extends Fragment {
                 oe.setMessage(text.getText().toString());
                 oe.setExampleJavaBean(new ExampleJavaBean());
                 EventBus.getDefault().post(oe);
+                BackGroundEvent backGroundEvent = new BackGroundEvent();
+                backGroundEvent.setMessage("byhiegaaa");
+                EventBus.getDefault().post(backGroundEvent);
+
+
             }
         });
     }

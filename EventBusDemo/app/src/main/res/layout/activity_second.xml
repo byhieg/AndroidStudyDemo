@@ -16,10 +16,10 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="输入想传递给MainActivity的消息"
+        android:hint="输入想传递给MainActivity的消息"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/send"
@@ -30,5 +30,16 @@
         android:layout_below="@id/text"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动第三个Actiity"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/send"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
