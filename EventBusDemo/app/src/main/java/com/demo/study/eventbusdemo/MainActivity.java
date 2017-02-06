@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.button2)
+    public void startOtherService(){
+        Intent intent = new Intent(this, MyService.class);
+        startService(intent);
+    }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -61,5 +68,14 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(objectEvent.getMessage());
         Toast.makeText(this,objectEvent.getMessage(),Toast.LENGTH_SHORT).show();
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onServiceEvent(ObjectEvent objectEvent){
+        textView.setText(objectEvent.getMessage());
+        Toast.makeText(this,objectEvent.getExampleJavaBean().getName() + " " + objectEvent
+                .getExampleJavaBean().getName() + " ",Toast.LENGTH_SHORT).show();
+    }
+
+
 
 }

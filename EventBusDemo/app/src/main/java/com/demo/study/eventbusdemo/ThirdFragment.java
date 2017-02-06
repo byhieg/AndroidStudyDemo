@@ -43,6 +43,7 @@ public class ThirdFragment extends Fragment {
                 startActivity(new Intent(getActivity(),MainActivity.class));
                 ObjectEvent oe = new ObjectEvent();
                 oe.setMessage(text.getText().toString());
+                oe.setExampleJavaBean(new ExampleJavaBean());
                 EventBus.getDefault().post(oe);
             }
         });

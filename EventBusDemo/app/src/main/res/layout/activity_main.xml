@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="@android:color/holo_red_dark"/>
 
@@ -40,9 +40,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="跳转到第三个Activity"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:background="@android:color/white"
         android:textColor="@android:color/holo_green_light"/>
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动Service"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/holo_green_dark"/>
 </RelativeLayout>
