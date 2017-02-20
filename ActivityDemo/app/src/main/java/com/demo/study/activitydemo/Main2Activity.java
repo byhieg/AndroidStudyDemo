@@ -21,6 +21,8 @@ public class Main2Activity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Log.e("Main2", "onCreate执行了");
     }
 
     @Override
