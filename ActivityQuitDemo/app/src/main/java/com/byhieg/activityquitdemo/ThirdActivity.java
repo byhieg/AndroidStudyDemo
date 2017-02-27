@@ -18,8 +18,13 @@ public class ThirdActivity extends BaseActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(ThirdActivity.this, MainActivity.class);
                 startActivity(intent);
+                Intent intent1 = new Intent();
+                intent1.setAction(MainActivity.ACTION);
+                sendBroadcast(intent1);
+
             }
         });
     }

@@ -17,5 +17,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="启动第三个Activity"/>
+        android:text="退出"/>
 </LinearLayout>
