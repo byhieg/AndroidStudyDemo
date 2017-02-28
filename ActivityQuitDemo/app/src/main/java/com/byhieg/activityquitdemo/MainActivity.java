@@ -1,6 +1,5 @@
 package com.byhieg.activityquitdemo;
 
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -63,7 +62,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            MainActivity.this.finish();
+//            MainActivity.this.finish();
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.e("main", "onNewIntent调用");
+        if (intent != null) {
+            boolean isExit = intent.getBooleanExtra(ACTION, false);
+            if (isExit) {
+                this.finish();
+            }
         }
     }
 }
