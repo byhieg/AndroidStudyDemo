@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -15,6 +20,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     public static final String ACTION = "action.exit.main";
     public Button quitButton;
     private MainExitReceiver registerReceiver = new MainExitReceiver();
+    private boolean isExit;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,12 +77,39 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.e("main", "onNewIntent调用");
-        if (intent != null) {
-            boolean isExit = intent.getBooleanExtra(ACTION, false);
+//        Log.e("main", "onNewIntent调用");
+//        if (intent != null) {
+//            boolean isExit = intent.getBooleanExtra(ACTION, false);
+//            if (isExit) {
+//                this.finish();
+//            }
+//        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        Log.e("main", "触发了嘛");
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (isExit) {
                 this.finish();
+            }else {
+                Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                isExit = true;
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        isExit = false;
+//                    }
+//                },2000);
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                      isExit = false;
+                    }
+                },2000);
+                return true;
             }
         }
+        return super.onKeyDown(keyCode, event);
     }
 }
