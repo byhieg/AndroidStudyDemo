@@ -45,8 +45,6 @@ public class NormalRxActivity extends AppCompatActivity {
     }
 
     public Observable createObservable(){
-
-
         return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(Subscriber<? super String> subscriber) {
