@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     public Button button;
     public Button button1;
+    public Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.dialog);
                 builder.setTitle("提示"); //设置标题
                 builder.setMessage("是否确认退出?"); //设置内容
                 builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
@@ -51,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.create().show();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Main4Activity.class);
+                startActivity(intent);
             }
         });
         if (savedInstanceState != null) {
