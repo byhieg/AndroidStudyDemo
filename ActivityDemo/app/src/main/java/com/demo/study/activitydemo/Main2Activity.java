@@ -48,6 +48,7 @@ public class Main2Activity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.e("Main2","onSave执行了");
+
     }
 
     @Override
