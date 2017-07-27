@@ -1,0 +1,35 @@
+//apply plugin: 'com.android.library'
+apply plugin: 'java'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+}
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+        test.compileClasspath += configurations.provided
+        test.runtimeClasspath += configurations.provided
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    provided('com.google.android:android:2.1.2')
+    compile 'com.google.auto.service:auto-service:1.0-rc2'
+}
+
+apply plugin: 'com.meitu.maven'
+easyMaven {
+    artifactId = 'modularprotocol'
+}
+
+apply plugin: 'com.meitu.maven-publish'
+

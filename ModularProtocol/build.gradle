@@ -2,11 +2,14 @@
 
 buildscript {
     repositories {
+        maven {
+            url "http://172.16.3.13:8083/repository/maven-public/"
+        }
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-
+        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.meitu.gradle:easymaven:1.0.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -14,10 +17,17 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "http://172.16.3.13:8083/repository/maven-public/"
+        }
         jcenter()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+ext {
+//    MAVEN_REPOSITORY_URL = uri(file('repo'))
+//    MAVEN_SNAPSHOT_REPOSITORY_URL = uri(file('repo'))
 }

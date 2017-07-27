@@ -1,0 +1,1 @@
+include ':library', ':samplemodule1', ':samplemodule2', ':sampleapp'
